@@ -1,0 +1,41 @@
+<div
+  style="
+text-align: right;
+width: 75%;
+font-size: 12px;
+color: #666
+"
+>
+  平均点 60.9点
+</div>
+<div style="margin: 30px 80px;font-size:12px">
+  <ul class="chart">
+    <li>
+      <span style="height:20%" title="0"></span>
+    </li>
+    <li>
+      <span style="height:40%" title="20"></span>
+    </li>
+    <li>
+      <span style="height:100%" title="40"></span>
+    </li>
+    <li>
+      <div *ngIf="isDisplay" class="balloon">
+        <p>14位</p>
+        <p style="font-size:10px">（78点）</p>
+      </div>
+      <span
+        (click)="onClick()"
+        class="selected"
+        style="height:78%"
+        title="60"
+      ></span>
+    </li>
+    <li>
+      <span style="height:100%" title="80"></span>
+    </li>
+    <li>
+      <span title="100"></span>
+    </li>
+  </ul>
+</div>

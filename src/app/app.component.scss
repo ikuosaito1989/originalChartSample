@@ -1,0 +1,88 @@
+body {
+  font: 13px/1.3 "Lucida Grande", sans-serif;
+  color: #666;
+}
+
+.chart {
+  display: table;
+  table-layout: fixed;
+
+  width: 60%;
+  max-width: 550px;
+  height: 200px;
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 2%,
+    transparent 2%
+  );
+  background-size: 100% 50px;
+  background-position: left top;
+
+  li {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 200px;
+  }
+
+  span {
+    margin: 0em 1.2em;
+    display: block;
+    background: rgba(#cccccc, 0.75);
+    animation: draw 1s ease-in-out;
+    min-width: 40px;
+    &:before {
+      position: absolute;
+      left: -50px;
+      right: 0;
+      top: 100%;
+      padding: 5px 1em 0;
+      display: block;
+      text-align: center;
+      content: attr(title);
+      word-wrap: break-word;
+    }
+  }
+}
+
+.selected {
+  background: #009fe8 !important;
+}
+
+.balloon {
+  z-index: 100;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 5px;
+  min-width: 60px;
+  max-width: 100%;
+  color: white;
+  background: rgba(#666666, 0.7);
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid rgba(#666666, 0.7);
+}
+
+.balloon p {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes draw {
+  0% {
+    height: 0;
+  }
+}
